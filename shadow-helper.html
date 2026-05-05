@@ -223,7 +223,7 @@
                     Skuggintensitet:
                     <span class="slider-value" id="intensityValue">70%</span>
                 </label>
-                <input type="range" id="shadowIntensity" min="20" max="80" value="70" step="5">
+                <input type="range" id="shadowIntensity" min="20" max="100" value="80" step="5">
             </div>
             
             <div class="control-group">
@@ -498,13 +498,13 @@
                             const sidx = nidx * 4;
                             const currentBrightness = (shadowData.data[sidx] + shadowData.data[sidx + 1] + shadowData.data[sidx + 2]) / 3;
                             
-                            if (currentBrightness > 150) { // Only apply to light areas
-                                const shadowAmount = shadowStrength * intensity * 0.9;
+                            if (currentBrightness > 100) { // Only apply to light areas
+                                const shadowAmount = shadowStrength * intensity * 1.8;
                                 
                                 // Warm shadow colors - darker burnt sienna
-                                const shadowR = 180;
-                                const shadowG = 80;
-                                const shadowB = 20;
+                                const shadowR = 120;
+                                const shadowG = 40;
+                                const shadowB = 10;
                                 
                                 shadowData.data[sidx] = currentBrightness * (1 - shadowAmount) + shadowR * shadowAmount;
                                 shadowData.data[sidx + 1] = currentBrightness * (1 - shadowAmount) + shadowG * shadowAmount;
